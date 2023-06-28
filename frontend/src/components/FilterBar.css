@@ -1,0 +1,24 @@
+form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 0.2rem 1rem 0.2rem;
+  background-color: #3c54cb;
+  border-radius: 0.5rem;
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+}
+
+select {
+  cursor: pointer;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  background-color: #3c54cb;
+  color: white;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+select:hover {
+  background-color: #1e39c4;
+}
