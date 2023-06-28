@@ -1,16 +1,19 @@
 import React from "react";
+import { Route, Routes } from "react-router-dom";
 import Nav from "./components/Nav";
-import Login from "./components/Login";
 import Liste from "./components/Liste";
 import Footer from "./components/Footer";
+import Login from "./Pages/Login";
 import "./App.scss";
 
 function App() {
   return (
     <div className="App">
       <Nav />
-      <Login />
       <Liste />
+      <Routes>
+        <Route path="/login" element={<Login />} />
+      </Routes>
       <Footer />
     </div>
   );
