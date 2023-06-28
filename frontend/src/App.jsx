@@ -1,6 +1,7 @@
 import React from "react";
 import Nav from "./components/Nav";
 import Liste from "./components/Liste";
+import Footer from "./components/Footer";
 import "./App.scss";
 
 function App() {
@@ -8,6 +9,7 @@ function App() {
     <div className="App">
       <Nav />
       <Liste />
+      <Footer />
     </div>
   );
 }
