@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
-import "../App.css";
+import "../App.scss";
 
 function Login() {
   const usernameRef = useRef();
