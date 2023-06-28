@@ -1,12 +1,13 @@
-import Home from "./pages/Home";
-
-import "./App.css";
+import React from "react";
+import Nav from "./components/Nav";
+import Liste from "./components/Liste";
+import "./App.scss";
 
 function App() {
   return (
     <div className="App">
-      <Home />
-      <p>coucou</p>
+      <Nav />
+      <Liste />
     </div>
   );
 }
