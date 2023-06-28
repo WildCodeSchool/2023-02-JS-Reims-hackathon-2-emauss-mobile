@@ -6,9 +6,11 @@ import "../App.scss";
 function Nav() {
   return (
     <nav className="Nav">
-      <img src={Logo} alt="Logo" className="Logo" />
-      <p>Emaüss Mobile Connect</p>
-      <Link to="/Login">Login</Link>
+      <div className="NAV1">
+        <img src={Logo} alt="Logo" className="Logo" />
+        <p>Emaüss Mobile Connect</p>
+        <Link to="/Login">Login</Link>
+      </div>
     </nav>
   );
 }
