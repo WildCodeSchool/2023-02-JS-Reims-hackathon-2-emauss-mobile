@@ -1,12 +1,17 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import PhoneState from "./PhoneState";
 
 function Analyse() {
   const { id } = useParams();
   const [phone, setPhone] = useState(null);
 
   useEffect(() => {
-    fetch(`http://localhost:6005/phones/${id}`)
+    fetch(
+      `${
+        import.meta.env.VITE_BACKEND_URL ?? "http://localhost:6005"
+      }/phones/${id}`
+    )
       .then((response) => response.json())
       .then((data) => {
         setPhone(data);
@@ -21,10 +26,21 @@ function Analyse() {
   }
 
   return (
-    <div>
-      <h2>{phone.name}</h2>
-      {/* Affichez les autres détails du téléphone */}
-    </div>
+    phone && (
+      <section>
+        <div className="phone-card">
+          <img src={phone.image} alt={phone.phone_name} />
+          <h1>{phone.phone_name}</h1>
+          <p>Brand: {phone.brand}</p>
+          <p>Version OS: {phone.version_os}</p>
+          <p>Stockage: {phone.storage}</p>
+          <p>Dimensions: {phone.dimensions}</p>
+          <p>Réseau: {phone.network}</p>
+          <p>Ram: {phone.ram}</p>
+        </div>
+        <PhoneState />
+      </section>
+    )
   );
 }
 
