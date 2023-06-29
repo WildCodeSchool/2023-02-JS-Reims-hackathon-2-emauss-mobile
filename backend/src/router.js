@@ -3,6 +3,7 @@ const express = require("express");
 const router = express.Router();
 const { hashPassword, verifyPassword } = require("./services/auth");
 
+const phoneControllers = require("./controllers/phoneControllers");
 const authControllers = require("./controllers/authControllers");
 const adminControllers = require("./controllers/adminControllers");
 
@@ -17,8 +18,6 @@ router.post(
   authControllers.getAdminByNameWithPasswordAndPassToNext,
   verifyPassword
 );
-
-const phoneControllers = require("./controllers/phoneControllers");
 
 router.get("/phones", phoneControllers.browse);
 router.get("/phones/:id", phoneControllers.read);

@@ -3,9 +3,10 @@ import { Link, Route, Routes } from "react-router-dom";
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
 import Login from "./pages/Login";
-import "./App.scss";
+import Analyse from "./components/Analyse";
 import Phones from "./pages/Phones";
 import FilterBar from "./components/FilterBar";
+import "./App.scss";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           element={<Link to="/Analyse">Analyse du téléphone</Link>}
         />
         <Route path="/login" element={<Login />} />
+        <Route path="/phones/:id" element={<Analyse />} />
       </Routes>
       <Phones />
       <Footer />
