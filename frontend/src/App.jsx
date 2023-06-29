@@ -2,18 +2,20 @@ import React from "react";
 import { Route, Routes } from "react-router-dom";
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
-import Login from "./Pages/Login";
+import Login from "./pages/Login";
 import "./App.scss";
-import Phones from "./Pages/Phones";
+import Phones from "./pages/Phones";
+import FilterBar from "./components/FilterBar";
 
 function App() {
   return (
     <div className="App">
       <Nav />
-      <Phones />
+      <FilterBar />
       <Routes>
         <Route path="/login" element={<Login />} />
       </Routes>
+      <Phones />
       <Footer />
     </div>
   );
