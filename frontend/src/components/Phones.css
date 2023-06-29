@@ -8,6 +8,11 @@
   justify-content: space-between;
 }
 
+.section1{
+  display: flex;
+  justify-content: space-around;
+}
+
 .phone-card {
   width: calc(25% - 20px);
   margin: 20px;
