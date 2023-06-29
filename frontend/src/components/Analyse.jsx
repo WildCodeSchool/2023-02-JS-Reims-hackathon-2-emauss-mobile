@@ -27,7 +27,7 @@ function Analyse() {
 
   return (
     phone && (
-      <section>
+      <section className="section1">
         <div className="phone-card">
           <img src={phone.image} alt={phone.phone_name} />
           <h1>{phone.phone_name}</h1>
@@ -37,9 +37,12 @@ function Analyse() {
           <p>Dimensions: {phone.dimensions}</p>
           <p>Réseau: {phone.network}</p>
           <p>Ram: {phone.ram}</p>
-          <p className="price">Price: {phone.price.toFixed(2)}&euro;</p>
+          <p className="price">Price: {phone.price.toFixed(2)}</p>
         </div>
         <PhoneState />
+        <button type="button" className="button2">
+          Envoyé les données
+        </button>
       </section>
     )
   );
