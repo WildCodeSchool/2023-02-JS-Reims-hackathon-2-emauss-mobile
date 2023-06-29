@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import PhoneState from "./PhoneState";
 
 function Analyse() {
   const [phone, setPhone] = useState(null);
@@ -8,7 +9,7 @@ function Analyse() {
   useEffect(() => {
     fetch(
       `${
-        import.meta.env.VITE_BACKEND_URL ?? "http://localhost:6005"
+        import.meta.env.VITE_BACKEND_URL ?? "http://localhost:6001"
       }/phones/${id}`
     )
       .then((response) => response.json())
@@ -26,6 +27,9 @@ function Analyse() {
           <p>Dimensions: {phone.dimensions}</p>
           <p>Réseau: {phone.network}</p>
           <p>Ram: {phone.ram}</p>
+        </div>
+        <div>
+          <PhoneState />
         </div>
       </section>
     )

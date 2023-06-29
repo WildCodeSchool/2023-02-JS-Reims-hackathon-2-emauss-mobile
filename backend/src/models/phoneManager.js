@@ -23,7 +23,7 @@ class PhoneManager extends AbstractManager {
 
   update(phone) {
     return this.database.query(
-      `update ${this.table} set brand = ?, phone_name = ?, version_os = ?, storage = ?, dimension = ?, network = ?, ram = ? , image=? ,WHERE id = ?`,
+      `update ${this.table} set brand = ?, phone_name = ?, version_os = ?, storage = ?, dimensions = ?, network = ?, ram = ?, image = ? where id = ?`,
       [
         phone.brand,
         phone.phone_name,

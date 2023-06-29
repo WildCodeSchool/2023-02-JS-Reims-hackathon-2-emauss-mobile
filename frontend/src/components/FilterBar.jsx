@@ -16,7 +16,7 @@ export default function FilterBar({ onFilter }) {
 
   return (
     <div className="filters">
-      <form onSubmit={handleFilterSubmit}>
+      <form className="filterbar" onSubmit={handleFilterSubmit}>
         <select value={brand} onChange={handleBrandChange}>
           <option value="">Marque</option>
           <option value="">Toutes</option>
