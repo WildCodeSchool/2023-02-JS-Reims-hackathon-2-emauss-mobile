@@ -1,24 +1,26 @@
-CREATE TABLE admin (
-    id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
-    username VARCHAR(80) NOT NULL,
-    hashedpassword VARCHAR(255) NOT NULL
-);
-
-CREATE TABLE phone (
-    id INT PRIMARY KEY AUTO_INCREMENT,
-    brand VARCHAR(80),
-    phone_name VARCHAR(80),
-    version_os VARCHAR(255),
-    storage VARCHAR(20),
-    dimensions VARCHAR(255),
-    network VARCHAR(20),
-    ram VARCHAR(20),
-    image VARCHAR(255)
-);
-
 CREATE TABLE category (
   id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
   title VARCHAR(100)
+);
+
+CREATE TABLE admin (
+  id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+  username VARCHAR(80) NOT NULL,
+  hashedpassword VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE phone (
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  brand VARCHAR(80),
+  phone_name VARCHAR(80),
+  version_os VARCHAR(255),
+  storage VARCHAR(20),
+  dimensions VARCHAR(255),
+  network VARCHAR(20),
+  ram VARCHAR(20),
+  image VARCHAR(255),
+  category_id INT,
+  FOREIGN KEY (category_id) REFERENCES category(id)
 );
 
 INSERT INTO category (title) VALUES ('Samsung'),('Apple'),('Google'),('Xiaomi');

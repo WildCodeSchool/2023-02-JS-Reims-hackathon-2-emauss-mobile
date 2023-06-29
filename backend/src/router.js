@@ -18,4 +18,12 @@ router.post(
   verifyPassword
 );
 
+const phoneControllers = require("./controllers/phoneControllers");
+
+router.get("/phones", phoneControllers.browse);
+router.get("/phones/:id", phoneControllers.read);
+router.put("/phones/:id", phoneControllers.edit);
+router.post("/phones", phoneControllers.add);
+router.delete("/phones/:id", phoneControllers.destroy);
+
 module.exports = router;
