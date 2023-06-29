@@ -6,7 +6,7 @@
 .App {
   display: grid;
   grid-template-columns: repeat(auto, auto);
-  grid-template-rows: repeat(4, 1fr);
+  grid-template-rows: auto;
   grid-column-gap: 0px;
   grid-row-gap: 0px;
 }
@@ -25,6 +25,28 @@
       color: white;
     }
   }
+}
+
+.sidebar {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 50px; /* Ajustez la hauteur selon vos besoins */
+  background-color: #f0f0f0; /* Couleur de fond de la barre latérale */
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  width: 100%;
+}
+
+.sidebar li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20%;
 }
 
 .Liste {
@@ -48,4 +70,67 @@
       }
     }
   }
+}
+
+.formulaire {
+  background-color: #192b6b;
+  border-radius: 40px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  padding: 50px;
+  text-align: center;
+  margin: 0 auto;
+  max-width: 600px;
+}
+
+.formulaire label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.login {
+  background-color: #000000;
+}
+
+.formulaire input,
+.formulaire select,
+.formulaire textarea {
+  display: block;
+  margin-bottom: 40px;
+  color: black;
+  border: 0px solid #0d1b4a;
+  border-radius: 15px;
+  padding: 10px;
+  width: 100%;
+  font-size: 16px;
+}
+
+.formulaire button[type="submit"] {
+  background-color: rgb(0, 0, 0);
+  color: #ffffff;
+  border: none;
+  border-radius: 15px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.formulaire button[type="submit"]:hover {
+  background-color: #0050c6;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: sans-serif;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
