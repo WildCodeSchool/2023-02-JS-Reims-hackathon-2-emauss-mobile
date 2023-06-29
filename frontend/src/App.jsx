@@ -7,6 +7,7 @@ import Analyse from "./components/Analyse";
 import Home from "./pages/Home";
 import FilterBar from "./components/FilterBar";
 import "./App.scss";
+import Phones from "./pages/Phones";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/phones/:id" element={<Analyse />} />
       </Routes>
+      <Phones />
       <Footer />
     </div>
   );
