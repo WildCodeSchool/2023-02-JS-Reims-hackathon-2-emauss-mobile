@@ -6,7 +6,9 @@ function Phones() {
   const [phones, setPhones] = useState([]);
 
   const fetchPhoneData = () => {
-    fetch("http://localhost:6005/phones")
+    fetch(
+      `${import.meta.env.VITE_BACKEND_URL ?? "http://localhost:6005"}/phones`
+    )
       .then((response) => response.json())
       .then((data) => {
         const phonesRandom = data.sort(() => Math.random() - 0.5);

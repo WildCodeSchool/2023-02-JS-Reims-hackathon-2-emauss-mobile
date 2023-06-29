@@ -1,16 +1,23 @@
 const express = require("express");
 
 const router = express.Router();
-
-const itemControllers = require("./controllers/itemControllers");
+const { hashPassword, verifyPassword } = require("./services/auth");
 
 const phoneControllers = require("./controllers/phoneControllers");
+const authControllers = require("./controllers/authControllers");
+const adminControllers = require("./controllers/adminControllers");
 
-router.get("/items", itemControllers.browse);
-router.get("/items/:id", itemControllers.read);
-router.put("/items/:id", itemControllers.edit);
-router.post("/items", itemControllers.add);
-router.delete("/items/:id", itemControllers.destroy);
+router.get("/admins", adminControllers.browse);
+router.get("/admins/:id", adminControllers.read);
+router.put("/admins/:id", hashPassword, adminControllers.edit);
+router.post("/admins", hashPassword, adminControllers.add);
+router.delete("/admins/:id", adminControllers.destroy);
+
+router.post(
+  "/login",
+  authControllers.getAdminByNameWithPasswordAndPassToNext,
+  verifyPassword
+);
 
 router.get("/phones", phoneControllers.browse);
 router.get("/phones/:id", phoneControllers.read);
