@@ -123,3 +123,32 @@ h6 {
 * {
   font-family: "Montserrat", sans-serif;
 }
+
+img {
+  margin: 3rem;
+  margin-right: 3rem;
+  width: 30%;
+}
+.container-review {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.button-ADT {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  height: 75px;
+  color: #ffffff;
+  background-color: #3c54cb;
+  border-radius: 2rem;
+  margin-right: 4rem;
+}
+.button-ADT:hover {
+  background-color: #0050c6; /* Couleur différente lors du survol */
+}
+
+.linkbut {
+  text-decoration: none;
+}
