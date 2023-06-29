@@ -1,7 +1,7 @@
 const models = require("../models");
 
 const browse = (req, res) => {
-  models.user
+  models.phone
     .findAll()
     .then(([rows]) => {
       res.send(rows);
@@ -13,7 +13,7 @@ const browse = (req, res) => {
 };
 
 const read = (req, res) => {
-  models.user
+  models.phone
     .find(req.params.id)
     .then(([rows]) => {
       if (rows[0] == null) {
@@ -29,14 +29,14 @@ const read = (req, res) => {
 };
 
 const edit = (req, res) => {
-  const user = req.body;
+  const phone = req.body;
 
   // TODO validations (length, format...)
 
-  user.id = parseInt(req.params.id, 10);
+  phone.id = parseInt(req.params.id, 10);
 
-  models.item
-    .update(user)
+  models.phone
+    .update(phone)
     .then(([result]) => {
       if (result.affectedRows === 0) {
         res.sendStatus(404);
@@ -51,12 +51,12 @@ const edit = (req, res) => {
 };
 
 const add = (req, res) => {
-  const user = req.body;
+  const phone = req.body;
 
   // TODO validations (length, format...)
 
-  models.user
-    .insert(user)
+  models.phone
+    .insert(phone)
     .then(([result]) => {
       res.location(`/items/${result.insertId}`).sendStatus(201);
     })
@@ -67,7 +67,7 @@ const add = (req, res) => {
 };
 
 const destroy = (req, res) => {
-  models.user
+  models.phone
     .delete(req.params.id)
     .then(([result]) => {
       if (result.affectedRows === 0) {
