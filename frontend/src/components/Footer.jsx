@@ -6,7 +6,7 @@ const footer = () => {
   return (
     <footer>
       <div className="footer-content">
-        <h3>Emmaus Mobile Connect</h3>
+        <h3>Emmaüss Mobile Connect</h3>
         <div className="footer-legal">
           <p>Mentions légales</p>
           <p>Politique des données personnelles</p>
