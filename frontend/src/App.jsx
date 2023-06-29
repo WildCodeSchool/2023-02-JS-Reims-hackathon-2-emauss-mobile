@@ -1,18 +1,16 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 import Nav from "./components/Nav";
-import Liste from "./components/Liste";
 import Footer from "./components/Footer";
 import Login from "./Pages/Login";
-import Characteristic from "./components/Characteristic";
 import "./App.scss";
+import Phones from "./Pages/Phones";
 
 function App() {
   return (
     <div className="App">
       <Nav />
-      <Characteristic />
-      <Liste />
+      <Phones />
       <Routes>
         <Route path="/login" element={<Login />} />
       </Routes>

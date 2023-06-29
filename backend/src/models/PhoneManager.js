@@ -6,9 +6,19 @@ class PhoneManager extends AbstractManager {
   }
 
   insert(phone) {
-    return this.database.query(`insert into ${this.table} (brand, phone_name, version_os, storage, dimensions, network, ram, image) values (?, ?, ?, ?, ?, ?, ?)`, [
-      phone.brand,
-    ]);
+    return this.database.query(
+      `insert into ${this.table} (brand, phone_name, version_os, storage, dimensions, network, ram, image) values (?, ?, ?, ?, ?, ?, ?, ?)`,
+      [
+        phone.brand,
+        phone.phone_name,
+        phone.version_os,
+        phone.storage,
+        phone.dimensions,
+        phone.network,
+        phone.ram,
+        phone.image,
+      ]
+    );
   }
 
   update(phone) {
@@ -23,12 +33,16 @@ class PhoneManager extends AbstractManager {
         phone.network,
         phone.ram,
         phone.image,
-        phone.id
+        phone.id,
       ]
     );
   }
-  
-  
+
+  getPhoneById(id) {
+    return this.database.query(`select * from ${this.table} where id = ?`, [
+      id,
+    ]);
+  }
 }
 
 module.exports = PhoneManager;
