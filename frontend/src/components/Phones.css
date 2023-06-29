@@ -17,6 +17,12 @@
   box-shadow: 5px 5px 5px;
 }
 
+.price {
+  margin-left: 1.5em;
+  font-size: 1.5em;
+  color: red;
+}
+
 .body {
   text-align: center;
 }

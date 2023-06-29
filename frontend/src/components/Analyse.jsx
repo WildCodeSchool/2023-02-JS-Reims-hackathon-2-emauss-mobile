@@ -37,6 +37,7 @@ function Analyse() {
           <p>Dimensions: {phone.dimensions}</p>
           <p>Réseau: {phone.network}</p>
           <p>Ram: {phone.ram}</p>
+          <p className="price">Price: {phone.price.toFixed(2)}&euro;</p>
         </div>
         <PhoneState />
       </section>
