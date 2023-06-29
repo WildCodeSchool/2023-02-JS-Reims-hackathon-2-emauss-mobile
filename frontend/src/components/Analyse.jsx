@@ -28,9 +28,7 @@ function Analyse() {
           <p>Réseau: {phone.network}</p>
           <p>Ram: {phone.ram}</p>
         </div>
-        <div>
-          <PhoneState />
-        </div>
+        <PhoneState />
       </section>
     )
   );
