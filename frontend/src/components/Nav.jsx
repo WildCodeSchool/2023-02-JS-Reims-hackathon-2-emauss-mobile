@@ -9,7 +9,7 @@ function Nav() {
       <div className="NAV1">
         <img src={Logo} alt="Logo" className="Logo" />
         <p>Emaüss Mobile Connect</p>
-        <Link to="/Login">Login</Link>
+        <Link to="/Login">Se connecter</Link>
       </div>
     </nav>
   );
