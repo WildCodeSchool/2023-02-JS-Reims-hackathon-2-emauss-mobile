@@ -1,5 +1,5 @@
 .imgphone {
-  width: 15rem;
+  width: 10rem;
 }
 
 .phone-grid {
@@ -12,7 +12,11 @@
   width: calc(25% - 20px);
   margin: 20px;
   padding: 10px;
-  border: 3px solid lightblue;
+  border: 3px solid lightslategrey;
   border-radius: 2rem;
-  box-shadow: 3px 3px 3px;
+  box-shadow: 5px 5px 5px;
+}
+
+.body {
+  text-align: center;
 }

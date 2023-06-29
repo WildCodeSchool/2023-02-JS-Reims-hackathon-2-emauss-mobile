@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import "../components/Phones.css";
 
 function Phones() {
@@ -23,16 +24,26 @@ function Phones() {
   }, []);
 
   return (
-    <section className="phone-grid">
-      {phones.map((phone) => (
-        <div className="phone-card" key={phone.id}>
-          <img className="imgphone" src={phone.image} alt={phone.phone_name} />
-          <h1>{phone.phone_name}</h1>
-          <p>Brand: {phone.brand}</p>
-          <p>Version OS: {phone.version_os}</p>
-        </div>
-      ))}
-    </section>
+    <div className="body">
+      <section className="phone-grid">
+        {phones.map((phone) => (
+          <Link
+            to={`/phones/${phone.id}`}
+            key={phone.id}
+            className="phone-card"
+          >
+            <img
+              className="imgphone"
+              src={phone.image}
+              alt={phone.phone_name}
+            />
+            <h1>{phone.phone_name}</h1>
+            <p>Marque: {phone.brand}</p>
+            <p>Version OS: {phone.version_os}</p>
+          </Link>
+        ))}
+      </section>
+    </div>
   );
 }
 
