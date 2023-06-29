@@ -7,7 +7,6 @@ import Analyse from "./components/Analyse";
 import Home from "./pages/Home";
 import FilterBar from "./components/FilterBar";
 import "./App.scss";
-import Phones from "./pages/Phones";
 import Review from "./pages/Review";
 
 function App() {
@@ -21,7 +20,6 @@ function App() {
         <Route path="/review" element={<Review />} />
         <Route path="/phones/:id" element={<Analyse />} />
       </Routes>
-      <Phones />
       <Footer />
     </div>
   );
