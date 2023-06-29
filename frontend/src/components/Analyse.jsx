@@ -3,44 +3,53 @@ import { useParams } from "react-router-dom";
 import PhoneState from "./PhoneState";
 
 function Analyse() {
-  const { id } = useParams();
   const [phone, setPhone] = useState(null);
+  const { id } = useParams();
+
+  const [loading, setLoading] = useState(false);
+  useEffect(() => {
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+    }, 10000);
+  }, []);
 
   useEffect(() => {
     fetch(
       `${
-        import.meta.env.VITE_BACKEND_URL ?? "http://localhost:6005"
+        import.meta.env.VITE_BACKEND_URL ?? "http://localhost:6001"
       }/phones/${id}`
     )
       .then((response) => response.json())
-      .then((data) => {
-        setPhone(data);
-      })
-      .catch((error) => {
-        console.error("Error fetching phone details:", error);
-      });
-  }, [id]);
-
-  if (!phone) {
-    return <div>Loading...</div>;
-  }
+      .then((data) => setPhone(data));
+  }, []);
 
   return (
-    phone && (
-      <section>
-        <div className="phone-card">
-          <img src={phone.image} alt={phone.phone_name} />
-          <h1>{phone.phone_name}</h1>
-          <p>Brand: {phone.brand}</p>
-          <p>Version OS: {phone.version_os}</p>
-          <p>Stockage: {phone.storage}</p>
-          <p>Dimensions: {phone.dimensions}</p>
-          <p>Réseau: {phone.network}</p>
-          <p>Ram: {phone.ram}</p>
-        </div>
-        <PhoneState />
-      </section>
-    )
+    <div className="conteneur">
+      {loading ? (
+        <div className="loader-container" />
+      ) : (
+        phone && (
+          <section>
+            <div className="phone-card">
+              <img
+                src={phone.image}
+                alt={phone.phone_name}
+                className="Samsungphone"
+              />
+              <h1>{phone.phone_name}</h1>
+              <p>Brand: {phone.brand}</p>
+              <p>Version OS: {phone.version_os}</p>
+              <p>Stockage: {phone.storage}</p>
+              <p>Dimensions: {phone.dimensions}</p>
+              <p>Réseau: {phone.network}</p>
+              <p>Ram: {phone.ram}</p>
+            </div>
+            <PhoneState />
+          </section>
+        )
+      )}
+    </div>
   );
 }
 
