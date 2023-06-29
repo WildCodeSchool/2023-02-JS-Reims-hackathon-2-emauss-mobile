@@ -3,18 +3,28 @@ import { useParams } from "react-router-dom";
 import PhoneState from "./PhoneState";
 
 function Analyse() {
-  const [phone, setPhone] = useState(null);
   const { id } = useParams();
+  const [phone, setPhone] = useState(null);
 
   useEffect(() => {
     fetch(
       `${
-        import.meta.env.VITE_BACKEND_URL ?? "http://localhost:6001"
+        import.meta.env.VITE_BACKEND_URL ?? "http://localhost:6005"
       }/phones/${id}`
     )
       .then((response) => response.json())
-      .then((data) => setPhone(data));
-  }, []);
+      .then((data) => {
+        setPhone(data);
+      })
+      .catch((error) => {
+        console.error("Error fetching phone details:", error);
+      });
+  }, [id]);
+
+  if (!phone) {
+    return <div>Loading...</div>;
+  }
+
   return (
     phone && (
       <section>
