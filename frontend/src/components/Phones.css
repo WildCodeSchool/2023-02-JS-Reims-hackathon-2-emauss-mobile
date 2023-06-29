@@ -8,6 +8,11 @@
   justify-content: space-between;
 }
 
+.section1{
+  display: flex;
+  justify-content: space-around;
+}
+
 .phone-card {
   width: calc(25% - 20px);
   margin: 20px;
@@ -15,6 +20,12 @@
   border: 3px solid lightslategrey;
   border-radius: 2rem;
   box-shadow: 5px 5px 5px;
+}
+
+.price {
+  margin-left: 1.5em;
+  font-size: 1.5em;
+  color: red;
 }
 
 .body {
