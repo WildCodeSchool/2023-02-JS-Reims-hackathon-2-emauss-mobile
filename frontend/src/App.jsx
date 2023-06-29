@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Routes } from "react-router-dom";
+import { Link, Route, Routes } from "react-router-dom";
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
 import Login from "./pages/Login";
@@ -13,6 +13,10 @@ function App() {
       <Nav />
       <FilterBar />
       <Routes>
+        <Route
+          path="/"
+          element={<Link to="/Analyse">Analyse du téléphone</Link>}
+        />
         <Route path="/login" element={<Login />} />
       </Routes>
       <div>

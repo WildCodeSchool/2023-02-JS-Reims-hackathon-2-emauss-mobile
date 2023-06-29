@@ -1,18 +1,20 @@
 const models = require("../models");
 
-const getUserByNameWithPasswordAndPassToNext = (req, res, next) => {
-  models.user.findByNameWithHashedPassword(req.body.username).then(([rows]) => {
-    const userInDatabase = rows[0];
+const getAdminByNameWithPasswordAndPassToNext = (req, res, next) => {
+  models.admin
+    .findByNameWithHashedPassword(req.body.username)
+    .then(([rows]) => {
+      const userInDatabase = rows[0];
 
-    if (userInDatabase == null) {
-      res.sendStatus(422);
-    } else {
-      req.user = userInDatabase;
+      if (userInDatabase == null) {
+        res.sendStatus(422);
+      } else {
+        req.admin = userInDatabase;
 
-      next();
-    }
-  });
+        next();
+      }
+    });
 };
 module.exports = {
-  getUserByNameWithPasswordAndPassToNext,
+  getAdminByNameWithPasswordAndPassToNext,
 };
