@@ -2,7 +2,7 @@ const AbstractManager = require("./AbstractManager");
 
 class UserManager extends AbstractManager {
   constructor() {
-    super({ table: "user" });
+    super({ table: "admin" });
   }
 
   findByNameWithHashedPassword(username) {
@@ -12,17 +12,17 @@ class UserManager extends AbstractManager {
     );
   }
 
-  insert(user) {
+  insert(admin) {
     return this.database.query(
       `insert into ${this.table} (username,mail,hashedPassword) values (?,?,?)`,
-      [user.username, user.mail, user.hashedPassword]
+      [admin.username, admin.hashedPassword]
     );
   }
 
-  update(user) {
+  update(admin) {
     return this.database.query(
       `update ${this.table} set username = ?, mail = ?, hashedpassword = ? where id = ?`,
-      [user.username, user.mail, user.password]
+      [admin.username, admin.password]
     );
   }
 }
