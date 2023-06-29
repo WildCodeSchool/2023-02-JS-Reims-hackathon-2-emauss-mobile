@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 
-function PhoneDetails() {
+function Analyse() {
   const { id } = useParams();
   const [phone, setPhone] = useState(null);
 
@@ -28,4 +28,4 @@ function PhoneDetails() {
   );
 }
 
-export default PhoneDetails;
+export default Analyse;
