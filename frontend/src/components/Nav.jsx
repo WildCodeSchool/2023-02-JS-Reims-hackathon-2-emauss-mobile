@@ -8,7 +8,7 @@ function Nav() {
     <nav className="Nav">
       <div className="NAV1">
         <img src={Logo} alt="Logo" className="Logo" />
-        <p>Emaüss Mobile Connect</p>
+        <p>Emmaüs Mobile Connect</p>
         <Link to="/Login">Se connecter</Link>
       </div>
     </nav>
