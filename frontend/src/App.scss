@@ -1,7 +1,7 @@
 * {
   padding: 0;
   margin: 0;
-  font-family: M;
+  font-family: "Montserrat", sans-serif;
 }
 .App {
   display: grid;
@@ -41,21 +41,20 @@
   width: 100%;
   height: 50px; /* Ajustez la hauteur selon vos besoins */
   background-color: #f0f0f0; /* Couleur de fond de la barre latérale */
-}
 
-.sidebar ul {
+ul {
   list-style-type: none;
   padding: 0;
   display: flex;
   width: 100%;
 }
 
-.sidebar li {
+li {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 20%;
-}
+}}
 
 .formulaire {
   background-color: #192b6b;
@@ -65,12 +64,11 @@
   text-align: center;
   margin: 0 auto;
   max-width: 600px;
-}
-
-.formulaire label {
+ label {
   display: block;
   margin-bottom: 10px;
   font-weight: bold;
+}
 }
 
 .login {
@@ -120,9 +118,6 @@ h6 {
   padding: 0 20px;
 }
 
-* {
-  font-family: "Montserrat", sans-serif;
-}
 .oldphone {
   margin: 3rem;
   margin-right: 3rem;
