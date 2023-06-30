@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import PhoneState from "./PhoneState";
 
 function Analyse() {
@@ -11,7 +11,7 @@ function Analyse() {
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
-    }, 10000);
+    }, 12000);
   }, []);
 
   useEffect(() => {
@@ -47,9 +47,9 @@ function Analyse() {
               <p className="price">Price: {phone.price.toFixed(2)}&euro;</p>
             </div>
             <PhoneState />
-            <button type="button" className="button2">
+            <Link to="/" className="button2">
               Envoyé les données
-            </button>
+            </Link>
           </section>
         )
       )}
