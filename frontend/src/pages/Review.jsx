@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import telephone from "../pictures/telephone.jpg";
+import telephone from "../pictures/fixe.jpg";
 
 function Review() {
   return (
